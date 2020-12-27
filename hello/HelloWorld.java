@@ -1,3 +1,5 @@
+//Progrmam to print each line from a given text file
+
 import edu.duke.*;
 
 public class HelloWorld {

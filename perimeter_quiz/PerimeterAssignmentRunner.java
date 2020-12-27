@@ -2,6 +2,7 @@ import edu.duke.*;
 import java.io.File;
 
 public class PerimeterAssignmentRunner {
+    //Program to find perimeter of a 2D shape of n sides
     public double getPerimeter (Shape s) {
         // Start with totalPerim = 0
         double totalPerim = 0.0;
@@ -19,7 +20,7 @@ public class PerimeterAssignmentRunner {
         // totalPerim is the answer
         return totalPerim;
     }
-
+    // Program to get the number of points in the shape
     public int getNumPoints (Shape s) {
         // Put code here
         int cnt = 0;
@@ -28,13 +29,13 @@ public class PerimeterAssignmentRunner {
         }
         return cnt;
     }
-
+    //Program to get the average length of sides of a shape
     public double getAverageLength(Shape s) {
         // Put code here
         double avg = getPerimeter(s)/getNumPoints(s);
         return avg;
     }
-
+    // Program to get the length of the largest side
     public double getLargestSide(Shape s) {
         // Put code here
         double largest = 0.0;
@@ -46,7 +47,7 @@ public class PerimeterAssignmentRunner {
         
         return largest;
     }
-
+    // Program to get the largest x-coordinate
     public double getLargestX(Shape s) {
         // Put code here
         double largestX = 0.0;
@@ -55,7 +56,7 @@ public class PerimeterAssignmentRunner {
         }
         return largestX;
     }
-    
+    // Program to get the largest perimeter out of multiple shapes
     public double getLargestPerimeterMultipleFiles() {
         // Put code here
         double largest = 0.0;
@@ -67,7 +68,7 @@ public class PerimeterAssignmentRunner {
         }
         return largest;
     }
-
+    // Program to get the file containing the shape largest perimeter
     public String getFileWithLargestPerimeter() {
         // Put code here
         File temp = null;    // replace this code
