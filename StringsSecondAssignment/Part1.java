@@ -72,7 +72,7 @@ public class Part1 {
             if(currGene.isEmpty()) break;
             else{
                 System.out.println(currGene);
-                startIndex = dna.indexOf(currGene) + currGene.length();
+                startIndex = dna.indexOf(currGene, startIndex) + currGene.length();
             }
         }
     }

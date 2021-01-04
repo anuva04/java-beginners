@@ -52,7 +52,7 @@ public class Part3 {
             if(currGene.isEmpty()) break;
             else{
                 cnt += 1;
-                startIndex = dna.indexOf(currGene) + currGene.length();
+                startIndex = dna.indexOf(currGene, startIndex) + currGene.length();
             }
         }
         return cnt;
