@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=ParsingWeatherDataClass
+comment1.params=currRow\ largestSoFar
+comment1.target=org.apache.commons.csv.CSVRecord\ getLargestOfTwo(org.apache.commons.csv.CSVRecord,\ org.apache.commons.csv.CSVRecord)
+comment2.params=currRow\ smallestSoFar
+comment2.target=org.apache.commons.csv.CSVRecord\ getSmallerOfTwo(org.apache.commons.csv.CSVRecord,\ org.apache.commons.csv.CSVRecord)
+comment3.params=parser
+comment3.target=org.apache.commons.csv.CSVRecord\ HottestHourInDay(org.apache.commons.csv.CSVParser)
+comment4.params=parser
+comment4.target=org.apache.commons.csv.CSVRecord\ ColdestHourInDay(org.apache.commons.csv.CSVParser)
+comment5.params=
+comment5.target=void\ testInOneDay()
+comment6.params=
+comment6.target=org.apache.commons.csv.CSVRecord\ HottestHourInManyDays()
+comment7.params=
+comment7.target=void\ testHottest()
+numComments=8
