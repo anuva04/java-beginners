@@ -31,7 +31,7 @@ public class CSVParserClass {
         for(CSVRecord record : parser){
             String currExports = record.get("Exports");
             if(currExports.contains(exportitem1) && currExports.contains(exportitem2)){
-                System.out.println(record.get("Country"));
+                System.out.println(record.get("Country") + " exports both " + exportitem1 + " and " + exportitem2);
             }
         }
     }
@@ -52,6 +52,7 @@ public class CSVParserClass {
     // Method to obtain all exporters whose export value exceeds a certain amount (checking only length of string of value tho!)
     
     public void bigExporters(CSVParser parser, String amount){
+        System.out.println("Countries with value greater than " + amount + " are: "); 
         for(CSVRecord record : parser){
             String currValue = record.get("Value (dollars)");
             if(currValue.length() > amount.length()){
@@ -66,9 +67,9 @@ public class CSVParserClass {
         CSVParser parser = fr.getCSVParser();
         System.out.println(countryInfo(parser, "Nauru"));
         parser = fr.getCSVParser();
-        listExportersTwoProducts(parser, "gold", "diamond");
+        listExportersTwoProducts(parser, "cotton", "flowers");
         parser = fr.getCSVParser();
-        System.out.println(numberOfExporters(parser, "gold"));
+        System.out.println("Number of Exporters: " + numberOfExporters(parser, "cocoa"));
         parser = fr.getCSVParser();
         bigExporters(parser, "$999,999,999,999");
     }
