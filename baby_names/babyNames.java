@@ -87,4 +87,59 @@ public class babyNames {
         int ans = getRank(2012, "Mason", "F");
         System.out.println("Rank is " + ans);
     }
+    
+    // Mathod to get name from give year with given name and gender
+    
+    public String getName(int year, int rank, String gender){
+        DirectoryResource dr = new DirectoryResource();
+        String requiredFileName = "";
+        for(File f : dr.selectedFiles()){
+            String currFileName = f.getAbsolutePath();
+            String reqdYear = Integer.toString(year);
+            if(currFileName.contains(reqdYear)){
+                requiredFileName = currFileName;
+                break;
+            }
+        }
+        FileResource fr = new FileResource(requiredFileName);
+        if(gender.equals("F")){
+            for(CSVRecord rec : fr.getCSVParser(false)){
+                if(rec.get(1).equals("M")) return "NO NAME";
+                rank -= 1;
+                if(rank==0) return rec.get(0);
+            }
+        } else {
+            for(CSVRecord rec : fr.getCSVParser(false)){
+                if(rec.get(1).equals("F")) continue;
+                rank -= 1;
+                if(rank==0) return rec.get(0);
+            }
+            return "NO NAME";
+        }
+        return "NO NAME";
+    }
+    
+    // Mathod to test getName(int year, int rank, String gender)
+    public void testGetName(){
+        String ans = getName(2012, 10, "M");
+        System.out.println("Name with given rank and gender: " + ans);
+    }
+    
+    // Method for finding a name's counterpart in another year based on popularity
+    
+    public void whatIsNameInYear(String name, int year, int newYear, String gender){
+        int rank = getRank(year, name, gender);
+        String newName = getName(newYear, rank, gender);
+        if(gender.equals("F")){
+            System.out.println(name + " born in " + year + " would be " + newName + " if she was born in " + newYear);
+        }else {
+            System.out.println(name + " born in " + year + " would be " + newName + " if he was born in " + newYear);
+        }
+    }
+    
+    // Mathod to test whatIsNameInYear(String name, int year, int newYear, String gender)
+    
+    public void testWhatIsNameInYear(){
+        whatIsNameInYear("Isabella", 2012, 2014, "F");
+    }
 }
